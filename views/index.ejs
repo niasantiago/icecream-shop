@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ice Cream Toppings Lookup</title>
+  <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Braah+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Ice Cream Shop</h1>
+  <h2>Please select your ice cream flavor and toppings</h2>
+
+  <form action="/submit" method="POST">
+    <select name="iceCream">
+      <% for (let i =0; i< iceCream.length; i++) { %>
+      <option value="<%= iceCream[i]%>"> <%= iceCream[i]%> </option>
+      <% } %>  
+    </select> 
+    <h2>Toppings</h2>
+    <% for (let i =0; i< toppings.length; i++) { %> 
+     <input value= "<%= toppings[i] %>"type="checkbox" name="toppings"><%= toppings[i] %> </input> 
+    <% } %> 
+    <button type="submit">Order</button> 
+  </form>  
+  <table> 
+    <tr> 
+      <th>flavor</th>
+      <th>toppings</th>
+      <th>Paid</th>
+    </tr>
+
+    <% for (let i =0; i< orders.length; i++) { %> 
+      <tr>
+      <td> <%= orders[i].iceCream%> </td> 
+      <td> <%= orders[i].toppings %> </td> 
+      <td> <%= orders[i].paid %> </td> 
+      
+      <td> 
+        <% if (orders[i].paid === false) { %>
+          <button value="<%= orders[i]._id%>" class="pay" >Pay</button> 
+       <% } else { %>
+        <p>paid</p> 
+          <%}%> 
+         </td> 
+      </tr>
+      
+
+     <% } %> 
+     </table> 
+
+  <section> 
+    <button class="clear" >Clear Order History </button> 
+  </section>
+
+  
+  <script src="main.js"></script>
+
+</body>
+</html>

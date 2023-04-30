@@ -1,0 +1,35 @@
+body{
+  background: red;
+  background-image: url(/images/cream.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  background-position: center;
+  margin-top: 100px; /* Adds 50 pixels of space above the image */
+  position: relative; /* Sets the position of the image relative to its container */
+  top: 50px; /* Positions the image 50 pixels from the top of its container */
+  display:flex; 
+  flex-direction: column;
+  align-content: center; 
+  align-items: center;
+} 
+  
+h1 {
+  font-family: 'Braah One', sans-serif; 
+  font-size: 50px;
+  color:white;
+} 
+
+h2 {
+  font-family: 'Braah One', sans-serif; 
+  color:rgb(206, 52, 157);
+}
+
+h3{
+  margin-top: 40px;
+} 
+
+table, th, td {
+  border:1px solid black; 
+  
+}
